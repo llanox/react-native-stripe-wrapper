@@ -1,5 +1,5 @@
 ## Stripe API Wrapper
-Stripe API wrapper  for react native and a generated form that use that.
+Stripe API wrapper  for react native and a credit card information form generated with tcomb-form-native.
 
 ## Set up
 
