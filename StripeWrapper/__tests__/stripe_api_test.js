@@ -42,7 +42,6 @@ var card_data = {
 
                                      expect(res.ok).to.be.true;
                                      expect(res.body.id).to.have.length(1);
-                                   //  expect(res.body.id).toContain('juan_ga');
                                      done();
                                   }
 

@@ -26,9 +26,12 @@ var CreditCard = tCombForms.struct({
 });
 
 var options = { 
+  auto: 'none',
+  
   fields: {
     number: {
-      placeholder: 'Card number'
+      placeholder: 'Card number',
+      error: 'Insert a valid credit card number'
     },
     exp_month: {
       placeholder: 'MM'

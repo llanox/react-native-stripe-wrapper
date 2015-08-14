@@ -60,7 +60,7 @@ module.exports = function (stripe_url, secret_key) {
  
                                 }
                                 
-                               
+                                console.log('response ',res.text);                               
                                 callback && callback(res);
 
                       }
@@ -68,44 +68,12 @@ module.exports = function (stripe_url, secret_key) {
 
          } catch (e) {
             var error = {ok: false, unauthorized: false, exception: e};
+            console.log('error ',error );  
             callback && callback(error);
         } 
 
              
     };
-
-        module.createCardTokenTest = function (request, cardNumber , expMonth ,expYear , cvc , callback ) {
-      
-           
-        var bytes = utf8.encode(secret_key+':');
-        var encodedSecretKey = base64.encode(bytes); 
-
-         try {
-
-                    request
-                    .post(stripe_url+'tokens')
-                    .set('Accept', '*/*')
-                    .set('Content-Type', 'application/x-www-form-urlencoded')
-                    .set('Authorization', 'Basic '+encodedSecretKey)
-                    .send('card'+'[number]='+cardNumber)
-                    .send('card'+'[exp_month]='+expMonth)
-                    .send('card'+'[exp_year]='+expYear)
-                    .send('card'+'[cvc]='+cvc)
-                    .end(callback);  
-
-         } catch (e) {
-            var error = {ok: false, unauthorized: false, exception: e};
-            callback && callback(error);
-        } 
-
-             
-    };
-
-
-     module.testResult = function (data) {
-
-        return data;
-     };
 
    
 
