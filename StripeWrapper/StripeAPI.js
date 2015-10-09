@@ -35,13 +35,13 @@ module.exports = function (stripe_url, secret_key) {
                     .end(function(err, res){
 
                                 if (err) {
-                                    if (! error.response) {
+                                    if (!err.response) {
                                         res = {
                                             ok: false,
                                             body: { errors: { default: 'Server connection error' }}
                                         }
                                     } else {
-                                        res = error.response;
+                                        res = err.response;
                                        
                                     }
                                 } else if(!res.ok){
